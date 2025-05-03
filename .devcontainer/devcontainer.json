@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "go-scratchpad - Dev Container",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/go-scratchpad",
+  "dockerComposeFile": "docker-compose.yml",
+  "initializeCommand": "sh ./.devcontainer/scripts/init.sh",
+  "postStartCommand": "sh ./.devcontainer/scripts/post-start.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "launch": {
+          "configurations": [
+              {
+                "name": "Run main.go",
+                "type": "go",
+                "request": "launch",
+                "mode": "auto",
+                "program": "${workspaceFolder}"
+              }
+          ]
+        }
+      },
+      "extensions": [
+        "ckolkman.vscode-postgres",
+        "streetsidesoftware.code-spell-checker",
+        "bierner.markdown-mermaid",
+        "eamodio.gitlens",
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "ms-azuretools.vscode-docker",
+        "golang.go"
+      ]
+    }
+  },
+  "remoteUser": "root"
+}
